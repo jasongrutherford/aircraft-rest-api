@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,7 +30,7 @@ public class AirlineRestController {
    * Returns List of Maps which gets converted into JSON Array of Objects.
    * @return List of Maps.
    */
-  @RequestMapping("/api/1.0/aircraft")
+  @RequestMapping(value = "/api/1.0/aircraft", method = RequestMethod.GET)
   public @ResponseBody List<Map<String, String>> listAllAircraft() {
     return aircraftService.listAllAircraft();
   }
